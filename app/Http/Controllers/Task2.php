@@ -2,7 +2,7 @@
 
 
 namespace App\Http\Controllers;
-
+//Задание 2
 
 class Task2 extends Controller
 {

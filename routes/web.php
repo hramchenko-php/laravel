@@ -50,7 +50,6 @@ Route::get('/user/{name?}', [UserController::class, 'showName']);
 
 
 //Задание 2
-
 Route::group(['prefix'=>'my'],function (){
     Route::get('/controller',[\App\Http\Controllers\Task2::class,'task2']);
     Route::get('/route',[\App\Http\Controllers\Task2::class,'task22']);
