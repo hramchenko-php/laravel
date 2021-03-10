@@ -2,25 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-use App\Http\Controllers\WelcomeControllers;
-use App\Http\Controllers\test\FirstTestController;
-use App\Http\Controllers\test\SecondTestController;
+//use App\Http\Controllers\WelcomeControllers;
+//use App\Http\Controllers\test\FirstTestController;
+//use App\Http\Controllers\test\SecondTestController;
 use App\Http\Controllers\UserController;
+
 /*Route::get('/', function () {
     return view('welcome');
 });*/
-
-
 
 /*Задание 1 группировка по префиксу my и ввывод переменной
 Route::group(['prefix'=>'my'],function (){
@@ -50,8 +39,11 @@ Route::get('/user/{name?}', [UserController::class, 'showName']);
 
 
 //Задание 2
-Route::group(['prefix'=>'my'],function (){
-    Route::get('/controller',[\App\Http\Controllers\Task2::class,'task2']);
-    Route::get('/route',[\App\Http\Controllers\Task2::class,'task22']);
+Route::group(['prefix' => 'my'], function () {
+    Route::get('/controller', [\App\Http\Controllers\Task2::class, 'task2']);
+    Route::get('/route', [\App\Http\Controllers\Task2::class, 'task22']);
     Route::get('/route/{name?}', [\App\Http\Controllers\Task2::class, 'openName']);
-    });
+    //Route::get('/view', [UserController::class, 'showName']); часть задания 2
+    //Задание 3 представления
+    Route::get('/view/{name?}', [\App\Http\Controllers\Task3::class, 'sendView']);
+});
