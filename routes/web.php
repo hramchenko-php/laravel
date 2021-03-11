@@ -5,12 +5,11 @@ use Illuminate\Support\Facades\Route;
 //use App\Http\Controllers\WelcomeControllers;
 //use App\Http\Controllers\test\FirstTestController;
 //use App\Http\Controllers\test\SecondTestController;
-use App\Http\Controllers\UserController;
+//use App\Http\Controllers\UserController;
 
 /*Route::get('/', function () {
     return view('welcome');
 });*/
-
 /*Задание 1 группировка по префиксу my и ввывод переменной
 Route::group(['prefix'=>'my'],function (){
    Route::get('/route/{var?}',function ($var=null){

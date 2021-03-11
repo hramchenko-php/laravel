@@ -3,34 +3,21 @@
 
 namespace App\Http\Controllers;
 
-
 class Task3 extends Controller
 {
+    //Оставил 2 поля
     public $productsArr =
         [
-            ['name' => 'Svekla', 'date' => '10.03.2022', 'spoiled' => '0'],
-            ['name' => 'Morkov', 'date' => '10.02.2021', 'spoiled' => '0'],
-            ['name' => 'Kapusta', 'date' => '10.02.2021', 'spoiled' => '0'],
-            ['name' => 'Kartofel', 'date' => '10.03.2022', 'spoiled' => '0'],
+            ['name' => 'Svekla', 'date' => '10.03.2022'],
+            ['name' => 'Morkov', 'date' => '10.02.2021'],
+            ['name' => 'Kapusta', 'date' => '10.02.2021'],
+            ['name' => 'Kartofel', 'date' => '10.03.2022'],
         ];
 
-    public function sendView($name = null)
+    public function sendView()
     {
-        return view('task3', ['name' => $name, 'productArray' => $this->Products($this->productsArr)]);
+        return view('task3', ['productArray' => $this->productsArr]);
     }
 
-    public function Products($array)
-    {
-        foreach ($array as $item) {
-            $dataProd = strtotime($item['date']);
-            $currentData = strtotime(date('d.m.Y'));
-            if ($dataProd < $currentData) {
-                $item['spoiled'] = 1;
-            } else {
-                $item['spoiled'] = 0;
-            }
-            $arrayNew[] = $item;
-        }
-        return $arrayNew;
-    }
+
 }
