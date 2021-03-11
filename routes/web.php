@@ -45,5 +45,5 @@ Route::group(['prefix' => 'my'], function () {
     Route::get('/route/{name?}', [\App\Http\Controllers\Task2::class, 'openName']);
     //Route::get('/view', [UserController::class, 'showName']); часть задания 2
     //Задание 3 представления
-    Route::get('/view/{name?}', [\App\Http\Controllers\Task3::class, 'sendView']);
+    Route::get('/view/', [\App\Http\Controllers\Task3::class, 'sendView']);
 });
