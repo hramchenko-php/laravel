@@ -17,9 +17,9 @@ echo '<h1>Таблица продуктов<h1><br>';
             <td>Дата: {{ $item['date'] }};</td>
             <td>
                 @if(strtotime($item['date']) > strtotime(date('d.m.Y')))
-                   Испорчен: {{$item[] = 0}}
+                   Испорчен: 0
                 @else
-                    Испорчен: {{$item[] = 1}}
+                    Испорчен: 1
                 @endif
             </td>
 
