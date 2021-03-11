@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 
 class Task3 extends Controller
 {
-    //Оставил 2 поля
+    //Оставил 2 поля.
     public $productsArr =
         [
             ['name' => 'Svekla', 'date' => '10.03.2022'],

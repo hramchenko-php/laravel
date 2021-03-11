@@ -5,7 +5,9 @@
 </header>
 <body>
 <?php
+
 echo '<h1>Таблица продуктов<h1><br>';
+
 ?>
 <br>
 <table border="3">

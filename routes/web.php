@@ -27,7 +27,7 @@ Route::group(['prefix'=>'my'],function (){
    });
 });*/
 
-/*//Эксперименты!
+/*//Эксперименты!!!
 //Route::get('/', [WelcomeController::class, 'show']);
 Route::group(['prefix' => 'test'], function () {
     Route::get('/1', [FirstTestController::class, 'index']);
