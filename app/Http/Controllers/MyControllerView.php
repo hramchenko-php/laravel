@@ -3,10 +3,9 @@
 
 namespace App\Http\Controllers;
 
-class Task3 extends Controller
+class MyControllerView extends Controller
 {
-    //Оставил 2 поля.
-    public $productsArr =
+    protected $productsArr =
         [
             ['name' => 'Svekla', 'date' => '10.03.2022'],
             ['name' => 'Morkov', 'date' => '10.02.2021'],
@@ -16,7 +15,7 @@ class Task3 extends Controller
 
     public function sendView()
     {
-        return view('task3', ['productArray' => $this->productsArr]);
+        return view('my-view', ['productArray' => $this->productsArr]);
     }
 
 

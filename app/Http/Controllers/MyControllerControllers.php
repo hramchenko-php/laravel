@@ -2,14 +2,14 @@
 
 
 namespace App\Http\Controllers;
-//Задание 2
 
-class Task2 extends Controller
+
+class MyControllerControllers extends Controller
 {
-    public function task2(){
+    public function welcomeController(){
         echo 'Привет это my/controller';
     }
-    public function task22(){
+    public function welcomeRoute(){
         echo 'Привет это my/route';
     }
     public function openName($name){

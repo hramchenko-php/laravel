@@ -2,11 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 
-//use App\Http\Controllers\WelcomeControllers;
-//use App\Http\Controllers\test\FirstTestController;
-//use App\Http\Controllers\test\SecondTestController;
-//use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\WelcomeControllers;
+use App\Http\Controllers\test\FirstTestController;
+use App\Http\Controllers\test\SecondTestController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\MyControllerView;
 /*Route::get('/', function () {
     return view('welcome');
 });*/
@@ -37,12 +37,11 @@ Route::get('/user/{name?}', [UserController::class, 'showName']);
 //Route::get('/', 'WelcomeController@show');*/
 
 
-//Задание 2
+
 Route::group(['prefix' => 'my'], function () {
-    Route::get('/controller', [\App\Http\Controllers\Task2::class, 'task2']);
-    Route::get('/route', [\App\Http\Controllers\Task2::class, 'task22']);
-    Route::get('/route/{name?}', [\App\Http\Controllers\Task2::class, 'openName']);
-    //Route::get('/view', [UserController::class, 'showName']); часть задания 2
-    //Задание 3 представления
-    Route::get('/view/', [\App\Http\Controllers\Task3::class, 'sendView']);
+    Route::get('/controller', [\App\Http\Controllers\MyControllerControllers::class, 'welcomeController']);
+    Route::get('/route', [\App\Http\Controllers\MyControllerControllers::class, 'welcomeRoute']);
+    Route::get('/route/{name?}', [\App\Http\Controllers\MyControllerControllers::class, 'openName']);
+    //Route::get('/view', [UserController::class, 'showName']);
+    Route::get('/view/', [\App\Http\Controllers\MyControllerView::class, 'sendView']);
 });
