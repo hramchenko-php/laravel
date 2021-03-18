@@ -69,7 +69,7 @@ class FirstTestController extends Controller
         }
 
         //hasOne чтобы получить пользователя который связан с этим заданием
-        $user = Task::find(2)->users;
+        $user = Task::find(2)->user;
         echo $user->first_name;
         echo $user->last_name;
 
