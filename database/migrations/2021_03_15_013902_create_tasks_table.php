@@ -17,7 +17,7 @@ class CreateTasksTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->text('description');
-            $table->unsignedInteger('user_id')->index();
+            $table->unsignedBigInteger('user_id')->index()->unsigned();
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');
 
@@ -31,6 +31,6 @@ class CreateTasksTable extends Migration
      */
     public function down()
     {
-        Schema::drop('tasks');
+        Schema::dropIfExists('tasks');
     }
 }

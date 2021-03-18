@@ -27,21 +27,21 @@ Route::group(['prefix'=>'my'],function (){
    });
 });*/
 
-/*//Эксперименты!!!
-//Route::get('/', [WelcomeController::class, 'show']);
+/*Эксперименты!!!
+Route::get('/', [WelcomeController::class, 'show']);
+
+Route::get('/user/{name?}', [UserController::class, 'showName']);
+Route::get('/', 'WelcomeController@show');*/
+
 Route::group(['prefix' => 'test'], function () {
     Route::get('/1', [FirstTestController::class, 'index']);
     Route::get('/2', [SecondTestController::class, 'index']);
 });
-Route::get('/user/{name?}', [UserController::class, 'showName']);
-//Route::get('/', 'WelcomeController@show');*/
-
-
 
 Route::group(['prefix' => 'my'], function () {
     Route::get('/controller', [\App\Http\Controllers\MyControllerControllers::class, 'welcomeController']);
     Route::get('/route', [\App\Http\Controllers\MyControllerControllers::class, 'welcomeRoute']);
     Route::get('/route/{name?}', [\App\Http\Controllers\MyControllerControllers::class, 'openName']);
     //Route::get('/view', [UserController::class, 'showName']);
-    Route::get('/view/', [\App\Http\Controllers\MyControllerView::class, 'sendView']);
+    Route::get('/view', [\App\Http\Controllers\MyControllerView::class, 'sendView']);
 });
