@@ -45,3 +45,6 @@ Route::group(['prefix' => 'my'], function () {
     //Route::get('/view', [UserController::class, 'showName']);
     Route::get('/view', [\App\Http\Controllers\MyControllerView::class, 'sendView']);
 });
+
+Route::get('/home',[\App\Http\Controllers\TaskController::class,'home']);
+Route::post('/task/store',[\App\Http\Controllers\TaskController::class,'store']);
