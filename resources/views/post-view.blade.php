@@ -7,7 +7,7 @@
 <?php
 echo '<h1>Данные POST<h1><br>';
 ?>
-{{$postArray['firstname']}}
+{{$postArray['name']}}
 <br>
 {{$postArray['email']}}
 </body>

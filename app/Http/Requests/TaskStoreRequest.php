@@ -3,10 +3,10 @@
 namespace App\Http\Requests;
 
 use Illuminate\Auth\Events\Validated;
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Validator;
 
-class UserStoreRequest extends Req
+class TaskStoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -27,14 +27,15 @@ class UserStoreRequest extends Req
     {
         return [
             'name' => 'required|string',
-            'password' => 'required|string|min:6|max:20',
-            'email' => ['required', 'string', 'email'],
+            'user_id' => ['required','exists:users,id'],
+            'description' => 'required|string|min:1|max:20'
+
         ];
     }
 
-//    protected function failedValidation(Validator $validator)
-//    {
-//        dd($validator->errors());
-//    }
+    protected function failedValidation(Validator $validator)
+    {
+        dd(parent::failedValidation($validator));
+    }
 
 }

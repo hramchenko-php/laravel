@@ -33,6 +33,8 @@ Route::get('/', [WelcomeController::class, 'show']);
 Route::get('/user/{name?}', [UserController::class, 'showName']);
 Route::get('/', 'WelcomeController@show');*/
 
+Route::post('/user/store',[UserController::class,'store']);
+
 Route::group(['prefix' => 'test'], function () {
     Route::get('/1', [FirstTestController::class, 'index']);
     Route::get('/2', [SecondTestController::class, 'index']);
@@ -49,6 +51,6 @@ Route::group(['prefix' => 'my'], function () {
 Route::get('/home',[\App\Http\Controllers\TaskController::class,'home']);
 Route::post('/task/store',[\App\Http\Controllers\TaskController::class,'store']);
 
-Route::group(['prefix' => 'user'], function () {
-    Route::post('store',[UserController::class,'store']);
-});
+
+
+
