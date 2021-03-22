@@ -10,9 +10,10 @@ class TaskController extends Controller
     {
         return view('home');
     }
-    public function store()
+    public function store(Request $request)
     	{
-    	return view('post-view',['postArray'=>$_POST]);
+    	return view('post-view',['postArray'=>$request->all()]);
+
     	}
 
 }

@@ -17,4 +17,9 @@ class UserController extends Controller
             ];
         return view('user-name', ['name' => $name,'fakeData'=>$fakeArray]);
     }
+
+    public function store(UserStoreRequest $request)
+    {
+        dd($request->validated());
+    }
 }
