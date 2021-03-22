@@ -5,10 +5,10 @@
 </header>
 <body>
 <?php
-echo '<h1>Данные POST<h1><br>';
+echo '<h1>Данные POST добавлены<h1><br>';
 ?>
 {{$postArray['name']}}
 <br>
-{{$postArray['email']}}
+{{$postArray['user_id']}}
 </body>
 </html>
