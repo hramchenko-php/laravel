@@ -2,7 +2,6 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Auth\Events\Validated;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -27,7 +26,7 @@ class TaskStoreRequest extends FormRequest
     {
         return [
             'name' => 'required|string|min:1|max:50',
-            'user_id' => ['required','exists:users,id'],
+            'user_id' => ['required', 'exists:users,id'],
             'description' => 'required|string|min:1|max:200'
 
         ];
