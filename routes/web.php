@@ -54,3 +54,7 @@ Route::post('/task/store',[\App\Http\Controllers\TaskController::class,'store'])
 
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -1,30 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<header>
-    <meta charset="utf-8">
-</header>
-<body>
-<?php
+@extends('layouts.app')
 
-echo '<h1>Главная HOME<h1><br>';
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Dashboard') }}</div>
 
-?>
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
 
-<form action="/task/store" method="post">
-    @csrf
-    <input type="text" name="name" value="Введите навание задачи">
-    <br>
-    <select name="user_id">
-        @foreach($userArray as $user)
-            <option>{{$user->id." ".$user->first_name." ".$user->last_name}}</option>
-        @endforeach
-    </select>
-    <!--<input type="number" name="user_id" value="Введите user id">-->
-    <br>
-    <input type="text" name="description" value="Введите description задачи">
-    <br>
-    <button type="submit">Отправить</button>
-</form>
-<br>
-</body>
-</html>
+                    {{ __('You are logged in!') }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
