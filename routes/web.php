@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\WelcomeControllers;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\test\FirstTestController;
 use App\Http\Controllers\test\SecondTestController;
 use App\Http\Controllers\UserController;
@@ -46,6 +46,17 @@ Route::group(['prefix' => 'my'], function () {
     Route::get('/route/{name?}', [\App\Http\Controllers\MyControllerControllers::class, 'openName']);
     //Route::get('/view', [UserController::class, 'showName']);
     Route::get('/view', [\App\Http\Controllers\MyControllerView::class, 'sendView']);
+    Route::get('/auth-user', function (){
+        $auth = Auth::user();
+        if ($auth) {
+        dump(Auth::user());
+        dump(Auth::user()->last_name);
+        }
+        else {
+            dump("Авторизируйтесь!");
+        }
+
+    });
 });
 //Задание 9.2
 Route::get('/home',[\App\Http\Controllers\TaskController::class,'home']);
