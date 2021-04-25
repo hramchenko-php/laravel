@@ -65,4 +65,4 @@ Route::post('/task/store',[\App\Http\Controllers\TaskController::class,'store'])
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->middleware('start_time')->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->middleware('start_time','check_admin')->name('home');

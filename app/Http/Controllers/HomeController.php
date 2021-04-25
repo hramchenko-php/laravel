@@ -38,7 +38,7 @@ class HomeController extends Controller
         //dd(compact('user', 'userId', 'userIsAuth', 'userIsNotAuth'));
 
 
-        dd($request->attributes->get("start_time"));
+        dump($request->attributes->get("start_time"));
         return view('home');
     }
 }
