@@ -56,7 +56,7 @@ Route::group(['prefix' => 'my'], function () {
     Route::get('/auth-user', [TestAuthController::class,'testUser']);
 });
 //Задание 9.2
-Route::get('/home',[\App\Http\Controllers\TaskController::class,'home']);
+//Route::get('/home',[\App\Http\Controllers\TaskController::class,'home']);
 Route::post('/task/store',[\App\Http\Controllers\TaskController::class,'store']);
 
 
@@ -65,4 +65,4 @@ Route::post('/task/store',[\App\Http\Controllers\TaskController::class,'store'])
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->middleware('start_time')->name('home');
