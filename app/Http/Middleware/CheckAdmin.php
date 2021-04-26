@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Http\Controllers\UserController;
 use App\Models\User;
 use Closure;
 use Illuminate\Http\Request;
@@ -19,13 +20,11 @@ class CheckAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        $id = Auth::id();
-        $stringUserTable = DB::table('users')->find($id);
-        if ($stringUserTable->is_admin != 1){
-            return redirect('/');
+        $user = Auth::user();
+        if ($user->is_admin != 1)
+        {
+            return back();
         }
-
         return $next($request);
-
     }
 }
